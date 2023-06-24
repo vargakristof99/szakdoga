@@ -9,7 +9,8 @@ export default {
             return res.status(400).json({message: "User already exists!"});
         }
         const hashedPwd = await bcrypt.hash(pwd, 8);
-        await Users.create({username: user, password: hashedPwd});
+        const roles = await Users.count()==0?[5150,2001,1984]:[2001];
+        await Users.create({username: user, password: hashedPwd, roles});
         res.status(200).json({message: "Sikeres!"});
     } 
 

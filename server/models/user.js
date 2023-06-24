@@ -11,7 +11,10 @@ const userSchema = Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    roles: [
+        Number
+    ]
 })
 
 export default mongoose.model("Users", userSchema);

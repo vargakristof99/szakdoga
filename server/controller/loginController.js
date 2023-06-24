@@ -15,6 +15,6 @@ export default {
 
         }
 
-        res.status(200).json({message: "Sikeres Bejelentkezés!"});
+        res.status(200).json({message: "Sikeres Bejelentkezés!", roles:foundUser.roles});
     }
 }

@@ -9,7 +9,7 @@ import Unauthorized from './components/Unauthorized';
 import Lounge from './components/Lounge';
 import LinkPage from './components/LinkPage';
 import RequireAuth from './components/RequireAuth';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 
 const ROLES = {
@@ -22,11 +22,11 @@ const ROLES = {
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout/>}>
+      <Route path="/" element={<Layout/>}> 
         {/* public routes */}
+        <Route path="linkpage" element={<LinkPage />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
-        <Route path="linkpage" element={<LinkPage />} />
         <Route path="unauthorized" element={<Unauthorized />} />
 
         {/* we want to protect these routes */}
